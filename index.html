@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Lei Castillo - Sonido, Estructura e Iluminación Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0a0a0a;
+            --secondary: #1a1a2e;
+            --accent: #00ffff;
+            --accent-dark: #0099cc;
+            --text: #ffffff;
+            --text-dim: #a0a0a0;
+            --gradient: linear-gradient(135deg, #00ffff 0%, #9d50bb 100%);
+            --whatsapp: #25d366;
+            --whatsapp-hover: #128C7E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo i {
+            color: var(--accent);
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: url('https://z-cdn-media.chatglm.cn/files/3e772ade-7478-418a-9295-43766c03e2b9_IMG-20251001-WA0059.jpg?auth_key=1790909046-fa1a2969182d4846a5e29d3331ae6a02-0-3bb1caffc71488fbb8e7d903a0bb3620') no-repeat center center/cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: var(--text-dim);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.5);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: var(--secondary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: var(--gradient);
+            bottom: -10px;
+            left: 20%;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(26, 26, 46, 0.7);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-dim);
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 100px 0;
+            background: var(--primary);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .package-card {
+            background: var(--secondary);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0, 255, 255, 0.3);
+        }
+
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .package-card:hover .package-image img {
+            transform: scale(1.05);
+        }
+
+        .package-header {
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .package-card.platinum .package-header {
+            background: linear-gradient(135deg, #e5e5e5 0%, #a8a8a8 100%);
+            color: var(--primary);
+        }
+
+        .package-card.diamante .package-header {
+            background: linear-gradient(135deg, #f0f0f0 0%, #d1d1d1 100%);
+            color: var(--primary);
+        }
+
+        .package-header h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .package-header .price {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .package-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-body ul {
+            list-style: none;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .package-body ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .package-body ul li i {
+            color: var(--accent);
+            margin-right: 15px;
+        }
+
+        .package-body .cta-button {
+            width: 100%;
+            text-align: center;
+            padding: 12px;
+            font-size: 1rem;
+            margin-top: auto;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--secondary);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            border: 3px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+            height: 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-dim);
+        }
+
+        .about-text .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: var(--primary);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-form {
+            background: var(--secondary);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            background: rgba(10, 10, 10, 0.5);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: var(--whatsapp-hover);
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        /* WhatsApp CTA */
+        .whatsapp-cta {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--whatsapp);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-cta i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .whatsapp-cta:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 50px 0 20px;
+            text-align: center;
+            border-top: 1px solid rgba(0, 255, 255, 0.3);
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: rgba(0, 255, 255, 0.1);
+            color: var(--accent);
+            border-radius: 50%;
+            margin: 0 10px;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-headphones"></i>
+                DJ <span>Lei Castillo</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#paquetes">Paquetes</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Experiencia <span>SONORA</span> Profesional</h1>
+            <p>Sonido, estructura e iluminación para todo tipo de eventos</p>
+            <a href="#paquetes" class="cta-button">CONOCE NUESTROS PAQUETES</a>
+            <a href="https://wa.me/51972779032?text=Hola%20Lei%20Castillo,%20estoy%20interesado%20en%20tus%20servicios%20de%20DJ" class="whatsapp-cta" target="_blank">
+                <i class="fab fa-whatsapp"></i> CONSULTAR POR WHATSAPP
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Servicios</h2>
+                <p>Transformamos tu evento en una experiencia inolvidable con tecnología de punta y creatividad sin límites</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-music"></i>
+                    <h3>DJ Profesional</h3>
+                    <p>Música en tendencia, mezclas perfectas y energía para mantener a tu audiencia bailando toda la noche</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-volume-up"></i>
+                    <h3>Sonido Premium</h3>
+                    <p>Sistemas de audio de alta fidelidad con cobertura total y calidad de estudio para cualquier espacio</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-cube"></i>
+                    <h3>Estructura Profesional</h3>
+                    <p>Montajes seguros y estéticos para escenarios, pantallas y elementos visuales de gran formato</p>
+                </div>
+                
+                <div class="service-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Iluminación LED</h3>
+                    <p>Efectos de luz inteligentes, juegos de colores y atmósferas personalizadas para cada momento</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages" id="paquetes">
+        <div class="container">
+            <div class="section-title">
+                <h2>Paquetes para Eventos</h2>
+                <p>Soluciones completas adaptadas a tus necesidades y presupuesto</p>
+            </div>
+            
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://cdn.pixabay.com/photo/2023/10/28/11/52/dj-8347229_1280.jpg" alt="Paquete Básico">
+                    </div>
+                    <div class="package-header">
+                        <h3>Básico</h3>
+                        <div class="price">Ideal para eventos íntimos</div>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> DJ Profesional</li>
+                            <li><i class="fas fa-check"></i> 1 Torre de sonido</li>
+                            <li><i class="fas fa-check"></i> Equipo básico de iluminación</li>
+                            <li><i class="fas fa-check"></i> Asesoría previa</li>
+                        </ul>
+                        <a href="https://wa.me/51972779032?text=Hola%20Lei%20Castillo,%20estoy%20interesado%20en%20el%20paquete%20Básico" class="cta-button" target="_blank">CONSULTAR POR WHATSAPP</a>
+                    </div>
+                </div>
+                
+                <div class="package-card platinum">
+                    <div class="package-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/22/19/15/hand-1850120_1280.jpg" alt="Paquete Platinum">
+                    </div>
+                    <div class="package-header">
+                        <h3>Platinum</h3>
+                        <div class="price">Experiencia completa</div>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> DJ Profesional</li>
+                            <li><i class="fas fa-check"></i> Sistema de sonido premium</li>
+                            <li><i class="fas fa-check"></i> Proyección de videos</li>
+                            <li><i class="fas fa-check"></i> Múltiples torres de sonido</li>
+                            <li><i class="fas fa-check"></i> Iluminación profesional</li>
+                            <li><i class="fas fa-check"></i> Asesoría personalizada</li>
+                        </ul>
+                        <a href="https://wa.me/51972779032?text=Hola%20Lei%20Castillo,%20estoy%20interesado%20en%20el%20paquete%20Platinum" class="cta-button" target="_blank">CONSULTAR POR WHATSAPP</a>
+                    </div>
+                </div>
+                
+                <div class="package-card diamante">
+                    <div class="package-image">
+                        <img src="https://cdn.pixabay.com/photo/2016/11/29/11/36/club-1869222_1280.jpg" alt="Paquete Diamante">
+                    </div>
+                    <div class="package-header">
+                        <h3>Diamante</h3>
+                        <div class="price">Experiencia VIP</div>
+                    </div>
+                    <div class="package-body">
+                        <ul>
+                            <li><i class="fas fa-check"></i> DJ Profesional</li>
+                            <li><i class="fas fa-check"></i> Estructura completa</li>
+                            <li><i class="fas fa-check"></i> Sistema de sonido de alta gama</li>
+                            <li><i class="fas fa-check"></i> Iluminación profesional premium</li>
+                            <li><i class="fas fa-check"></i> Pantallas LED</li>
+                            <li><i class="fas fa-check"></i> Efectos especiales</li>
+                            <li><i class="fas fa-check"></i> Producción integral</li>
+                        </ul>
+                        <a href="https://wa.me/51972779032?text=Hola%20Lei%20Castillo,%20estoy%20interesado%20en%20el%20paquete%20Diamante" class="cta-button" target="_blank">CONSULTAR POR WHATSAPP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre DJ Lei Castillo</h2>
+                <p>Innovando en cada beat, creando experiencias memorables</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://z-cdn-media.chatglm.cn/files/3e772ade-7478-418a-9295-43766c03e2b9_IMG-20251001-WA0059.jpg?auth_key=1790909046-fa1a2969182d4846a5e29d3331ae6a02-0-3bb1caffc71488fbb8e7d903a0bb3620" alt="DJ Lei Castillo en acción">
+                </div>
+                <div class="about-text">
+                    <h2>La música que está en tendencia, en tus eventos</h2>
+                    <p>Con más de 10 años de experiencia en la industria musical, DJ Lei Castillo se ha convertido en un referente para eventos de todo tipo. Desde fiestas privadas hasta grandes producciones corporativas, nuestro equipo transforma cada celebración en una experiencia única e inolvidable.</p>
+                    
+                    <p>Nos especializamos en crear atmósferas personalizadas que combinan la tecnología más avanzada con un profundo conocimiento musical. Cada beat está cuidadosamente seleccionado para mantener la energía perfecta en cada momento de tu evento.</p>
+                    
+                    <div class="quote">"No solo tocamos música, creamos experiencias que quedan grabadas en la memoria"</div>
+                    
+                    <p>Nuestro compromiso es superar tus expectativas con profesionalismo, creatividad y la más alta calidad en sonido, iluminación y producción.</p>
+                    
+                    <a href="https://wa.me/51972779032?text=Hola%20Lei%20Castillo,%20me%20gustaría%20conocer%20más%20sobre%20tus%20servicios" class="whatsapp-cta" target="_blank">
+                        <i class="fab fa-whatsapp"></i> HABLEMOS POR WHATSAPP
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+                <p>Personaliza tu evento con nuestros servicios profesionales</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event">Tipo de evento</label>
+                            <select id="event" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="boda">Boda</option>
+                                <option value="corporativo">Evento corporativo</option>
+                                <option value="fiesta">Fiesta privada</option>
+                                <option value="festival">Festival</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="package">Paquete de interés</label>
+                            <select id="package" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="basico">Básico</option>
+                                <option value="platinum">Platinum</option>
+                                <option value="diamante">Diamante</option>
+                                <option value="personalizado">Personalizado</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje adicional</label>
+                            <textarea id="message" rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button">ENVIAR SOLICITUD</button>
+                    </form>
+                    
+                    <div style="margin-top: 20px; text-align: center;">
+                        <p style="margin-bottom: 15px; color: var(--text-dim);">O contáctanos directamente por WhatsApp:</p>
+                        <a href="https://wa.me/51972779032?text=Hola%20Lei%20Castillo,%20estoy%20interesado%20en%20contratar%20tus%20servicios" class="whatsapp-cta" target="_blank">
+                            <i class="fab fa-whatsapp"></i> ENVIAR MENSAJE POR WHATSAPP
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+51972779032">+51 972 779 032</a></span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <span><a href="https://wa.me/51972779032" target="_blank">WhatsApp</a></span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@djleicastillo.com">info@djleicastillo.com</a></span>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fab fa-instagram"></i>
+                        <span><a href="https://instagram.com/djleicastillo" target="_blank">@djleicastillo</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/51972779032?text=Hola%20Lei%20Castillo,%20me%20gustaría%20cotizar%20tus%20servicios" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://facebook.com/djleicastillo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/djleicastillo" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/djleicastillo" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://youtube.com/djleicastillo" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://tiktok.com/@djleicastillo" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <p class="copyright">© 2023 DJ Lei Castillo. Todos los derechos reservados. | Diseñado con <i class="fas fa-heart" style="color: var(--accent);"></i> para crear experiencias inolvidables</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! Te contactaremos pronto.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
